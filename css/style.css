@@ -29,6 +29,16 @@ body{
 }
 .container{max-width:1200px}
 .logo-image{height:62px;width:auto;display:block}
+.site-footer .logo-image {
+  height: auto;
+  max-height: 48px;
+  max-width: 100%;
+  object-fit: contain;
+}
+.site-footer .header-wrap {
+  flex-wrap: wrap;
+  gap: 12px;
+}
 .social-link{
   width:42px;height:42px;border-radius:12px;display:grid;place-items:center;text-decoration:none;
   background:#fff; border:1px solid rgba(255,255,255,.08); transition:transform .25s ease, box-shadow .25s ease
@@ -128,10 +138,12 @@ body{
 .faq-item summary::-webkit-details-marker{display:none}
 .faq-content{padding:0 24px 22px; color:#392f2f; font-size:18px; line-height:1.45; font-weight:600}
 .faq-arrow{font-size:28px; line-height:1}
+
+/* описывает движение */ 
 .ticker-section{
   position:relative;
   padding:18px 0 38px;
-  overflow:visible;
+  overflow: hidden;
 }
 .ticker-section-first{
   margin-top:8px;
@@ -145,6 +157,8 @@ body{
   transform-origin:center;
 }
 .ticker + .ticker{margin-top:12px}
+
+/*задаёт анимацию движения*/ 
 .ticker-track{
   display:flex; width:max-content; gap:22px; padding:10px 0; animation:tickerMove 22s linear infinite
 }
@@ -157,6 +171,8 @@ body{
 .ticker-cyan{background:var(--cyan); color:#fff; transform:rotate(-4deg)}
 .ticker-red{background:var(--red); color:#fff; transform:rotate(4deg)}
 .reveal-up,.reveal-card{opacity:0; transform:translateY(26px)}
+
+/*описание ключивых кадров анимации*/ 
 @keyframes tickerMove{from{transform:translateX(0)}to{transform:translateX(-33.333%)}}
 @media (max-width: 991.98px){
   .feature-card,.feature-card.tall{grid-template-columns:1fr; padding:20px; min-height:unset}
@@ -185,4 +201,19 @@ body{
   .mockup-six{width:min(100%, 240px)}
   .mockup-seven{width:min(100%, 210px)}
   .hero-phone-image{width:min(100%, 280px)}
+}
+@media (max-width: 480px) {
+  .site-footer .logo-image {
+    max-height: 38px;
+  }
+}
+@media (max-width: 576px){
+  .feedback-card .d-flex{
+    flex-direction: column;
+  }
+
+  .btn-light-premium{
+    width: 100%;
+    min-width: unset;
+  }
 }
